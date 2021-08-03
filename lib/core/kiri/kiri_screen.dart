@@ -21,7 +21,8 @@ class KiriScreen extends StatelessWidget {
       body: Stack(children: [
         Container(
           padding: const EdgeInsets.all(8),
-          decoration: kiriDecorationBackgroundImage,
+          decoration:
+              kiriDecorationGradient, // kiriDecorationSolidColor, //kiriDecorationBackgroundImage,
         ),
         child,
       ]),
@@ -50,5 +51,5 @@ const kiriDecorationBackgroundImage = BoxDecoration(
 );
 
 const kiriDecorationSolidColor = BoxDecoration(
-  color: Color(0xFFDDDDDD),
+  color: Color(0xFFDDAADD),
 );

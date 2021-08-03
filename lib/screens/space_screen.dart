@@ -37,19 +37,23 @@ class SpaceScreen extends StatelessWidget {
                 clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MercuryModule(
-                      child: Text('ulmealmu'),
+                      child: Text('Module Content'),
                     ),
                     MercuryModule(
-                      child: Text('ulmealmu'),
+                      height: 250,
+                      child: Text('Module Content'),
                     ),
                     MercuryModule(
-                      child: Text('ulmealmu'),
+                      height: 150,
+                      child: Text('Module Content'),
                     ),
                     MercuryModule(
-                      child: Text('ulmealmu'),
+                      height: 200,
+                      child: Text('Module Content'),
                     ),
                   ],
                 ),
