@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mercuryos_ui_elements/core/color_constants.dart';
+import 'package:mercuryos_ui_elements/core/flow/flow_list.dart';
 import 'package:mercuryos_ui_elements/core/kiri/kiri_screen.dart';
 import 'package:mercuryos_ui_elements/core/module/mercury_module.dart';
 import 'package:mercuryos_ui_elements/core/space/space.dart';
@@ -9,6 +10,7 @@ class SpaceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final leftPadding = MediaQuery.of(context).size.width * 0.5 - 150;
     return KiriScreen(
       child: Stack(
         children: [
@@ -24,10 +26,15 @@ class SpaceScreen extends StatelessWidget {
               ),
             ),
           ),
+          Align(
+            child: FlowList(),
+            alignment: Alignment.centerLeft,
+          ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            padding: EdgeInsets.fromLTRB(leftPadding, 50, 0, 0),
             child: Center(
               child: SingleChildScrollView(
+                clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,15 +42,15 @@ class SpaceScreen extends StatelessWidget {
                     MercuryModule(
                       child: Text('ulmealmu'),
                     ),
-                    /*MercuryModule(
-                      child: Text('ulmealmu'),
-                    ),
                     MercuryModule(
                       child: Text('ulmealmu'),
                     ),
                     MercuryModule(
                       child: Text('ulmealmu'),
-                    ),*/
+                    ),
+                    MercuryModule(
+                      child: Text('ulmealmu'),
+                    ),
                   ],
                 ),
               ),
