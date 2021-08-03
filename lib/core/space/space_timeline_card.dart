@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mercuryos_ui_elements/core/color_constants.dart';
+import 'package:mercuryos_ui_elements/screens/space_screen.dart';
 
 class SpaceTimelineCard extends StatelessWidget {
   final String spaceName;
@@ -41,8 +42,18 @@ class SpaceTimelineCard extends StatelessWidget {
                       children: [
                         FittedBox(
                           fit: BoxFit.fitHeight,
-                          child: Text(spaceName,
-                              style: Theme.of(context).textTheme.headline5),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SpaceScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(spaceName,
+                                style: Theme.of(context).textTheme.headline5),
+                          ),
                         ),
                         FittedBox(
                           fit: BoxFit.fitHeight,
