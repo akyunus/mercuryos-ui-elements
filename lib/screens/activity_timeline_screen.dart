@@ -115,17 +115,27 @@ class ActivityTimelineScreen extends StatelessWidget {
       BuildContext context, ActivityDTO dailyActivity) {
     //final dailyActivity = activities[i];
     return Container(
-      height: MediaQuery.of(context).size.width * 0.28,
+      padding: EdgeInsets.fromLTRB(0, 0, 0, AdaptiveInsets.large),
+      height: MediaQuery.of(context).size.width * 0.3,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            dailyActivity.day,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          Row(
+            children: [
+              Text(
+                dailyActivity.day,
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+              ),
+              Icon(
+                Icons.north_west,
+                size: 14,
+                color: DefaultColorTheme.secondaryTextColor,
+              ),
+            ],
           ),
           SizedBox(
-            height: 10,
+            height: AdaptiveInsets.small,
           ),
           Expanded(
             child: ListView.builder(
