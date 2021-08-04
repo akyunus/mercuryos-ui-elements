@@ -8,7 +8,6 @@ class SpaceTimelineCard extends StatelessWidget {
   final List<Icon> moduleIcons;
   final String subInfo;
   final String thumbnailImage;
-  final List<String> thumbnailImages;
   const SpaceTimelineCard({
     Key? key,
     required this.lastUpdated,
@@ -16,17 +15,11 @@ class SpaceTimelineCard extends StatelessWidget {
     required this.moduleIcons,
     required this.subInfo,
     this.thumbnailImage: 'assets/ui-designs/module_map.png',
-    this.thumbnailImages: const [
-      'assets/ui-designs/module_map.png',
-      'assets/ui-designs/module_map.png',
-      'assets/ui-designs/module_map.png'
-    ],
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      clipBehavior: Clip.none,
       decoration: BoxDecoration(
           color: DefaultColorTheme.spaceCardBackgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -85,39 +78,7 @@ class SpaceTimelineCard extends StatelessWidget {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Stack(
-                      children: thumbnailImages.asMap().entries.map(
-                        (e) {
-                          final index = thumbnailImages.length - 1 - e.key;
-                          final imageURI = e.value;
-                          return Transform.rotate(
-                            alignment: Alignment.bottomRight,
-                            origin: Offset(index * 5, index * 20),
-                            angle: index * 0.15,
-                            child: Material(
-                                elevation: 5,
-                                child: Image.asset(
-                                  thumbnailImage,
-                                )),
-                          );
-                        },
-                      ).toList(),
-                      /*[
-                      Material(
-                          elevation: 5,
-                          child: Image.asset(
-                            thumbnailImage,
-                          )),
-                      Transform.rotate(
-                        angle: 0.2,
-                        child: Material(
-                            elevation: 5,
-                            child: Image.asset(
-                              thumbnailImage,
-                            )),
-                      ),
-                    ]*/
-                    ),
+                    child: Image.asset(thumbnailImage),
                   ),
                 ),
               ],
