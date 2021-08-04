@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:mercuryos_ui_elements/core/adaptive_helpers/adaptive_padding.dart';
+import 'package:mercuryos_ui_elements/core/adaptive_helpers/adaptive_insets.dart';
 import 'package:mercuryos_ui_elements/core/color_constants.dart';
 
 class LocusBar extends StatelessWidget {

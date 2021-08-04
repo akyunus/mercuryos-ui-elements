@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mercuryos_ui_elements/core/adaptive_helpers/adaptive_padding.dart';
+import 'package:mercuryos_ui_elements/core/adaptive_helpers/adaptive_insets.dart';
 import 'package:mercuryos_ui_elements/core/color_constants.dart';
 import 'package:mercuryos_ui_elements/core/kiri/kiri_screen.dart';
-import 'package:mercuryos_ui_elements/core/locus_bar/locus_bar.dart';
 import 'package:mercuryos_ui_elements/core/space/space_timeline_card.dart';
 
 List<ActivityDTO> activities = [

@@ -11,12 +11,30 @@ class MercuryFlow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //if (modules!.isEmpty) { modules.add(ModuleWelcome());}
-    return ListView.separated(
-      padding: const EdgeInsets.all(20),
-      itemBuilder: (context, i) => modules[i],
-      separatorBuilder: (context, i) => SizedBox(width: 20),
-      itemCount: modules.length,
+    return SingleChildScrollView(
+      clipBehavior: Clip.none,
       scrollDirection: Axis.horizontal,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          MercuryModule(
+            child: Text('Module Content'),
+          ),
+          MercuryModule(
+            height: 250,
+            child: Text('Module Content'),
+          ),
+          MercuryModule(
+            height: 150,
+            child: Text('Module Content'),
+          ),
+          MercuryModule(
+            height: 200,
+            child: Text('Module Content'),
+          ),
+        ],
+      ),
     );
   }
 }

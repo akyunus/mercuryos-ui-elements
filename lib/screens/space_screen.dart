@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mercuryos_ui_elements/core/color_constants.dart';
 import 'package:mercuryos_ui_elements/core/flow/flow_list.dart';
+import 'package:mercuryos_ui_elements/core/flow/mercury_flow.dart';
 import 'package:mercuryos_ui_elements/core/kiri/kiri_screen.dart';
 import 'package:mercuryos_ui_elements/core/module/mercury_module.dart';
 import 'package:mercuryos_ui_elements/core/space/space.dart';
@@ -48,30 +49,8 @@ class SpaceScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.fromLTRB(leftPadding, 50, 0, 0),
             child: Center(
-              child: SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MercuryModule(
-                      child: Text('Module Content'),
-                    ),
-                    MercuryModule(
-                      height: 250,
-                      child: Text('Module Content'),
-                    ),
-                    MercuryModule(
-                      height: 150,
-                      child: Text('Module Content'),
-                    ),
-                    MercuryModule(
-                      height: 200,
-                      child: Text('Module Content'),
-                    ),
-                  ],
-                ),
+              child: MercuryFlow(
+                modules: [],
               ),
             ),
           ),
