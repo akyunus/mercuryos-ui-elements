@@ -18,11 +18,26 @@ class SpaceScreen extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Text(
-                'Review Inbox',
-                style: TextStyle(
-                    fontSize: 40,
-                    color: DefaultColorTheme.locusSecondaryTextColor),
+              child: Row(
+                children: [
+                  IconButton(
+                      iconSize: 16,
+                      onPressed: () => Navigator.pop(context),
+                      icon: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationX(3),
+                        child: Icon(
+                          Icons.subdirectory_arrow_left_rounded,
+                          color: DefaultColorTheme.locusSecondaryTextColor,
+                        ),
+                      )),
+                  Text(
+                    'Review Inbox',
+                    style: TextStyle(
+                        fontSize: 40,
+                        color: DefaultColorTheme.locusSecondaryTextColor),
+                  ),
+                ],
               ),
             ),
           ),
@@ -58,13 +73,6 @@ class SpaceScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ),
-          Positioned(
-            bottom: 10,
-            child: TextButton(
-              child: Text('Back < '),
-              onPressed: () => Navigator.pop(context),
             ),
           ),
         ],
